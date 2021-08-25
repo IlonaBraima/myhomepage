@@ -195,7 +195,6 @@ body.upes {
 }
 
 body.maniuzdevumi {
-  background-image: none;
   background-color: grey;
 }
 
@@ -242,7 +241,6 @@ body.daugava {
   width: 40px;
   height: auto;
   text-align: right;
-  margin: 20px;
 }
 
 body.gauja {
