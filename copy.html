@@ -1,0 +1,13 @@
+
+
+
+<?php
+include('DB.php');
+
+$select="SELECT `id`, `name`, `apraksts` FROM `latvijasupes1`";
+$result=$conn->query($select);
+while($rinda=$result->fetch_assoc()) {
+echo"id: ".$rinda["id"]."upe ".$rinda["nosaukums"]." apr ".$rinda["apraksts"];
+
+}
+?>

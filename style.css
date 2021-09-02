@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
 body {
     font: 16px/1.5 Roboto, sans-serif;
@@ -15,8 +14,8 @@ body {
 }
 
 .boxpage {
-    margin: 50px 0px 0px 0px;
-    padding: 0px 70px 0px 80px;
+    margin: 50px 0 0 0;
+    padding: 0 70px 0 80px;
     background-color: rgba(245, 245, 245, .8)
 
 }
@@ -213,7 +212,8 @@ body {
 }
 
 .box {
-    width: 40%;
+    width: 30%;
+    height: auto;
     margin: 50px auto 0;
     position: relative;
     overflow: hidden;
@@ -392,5 +392,30 @@ blockquote cite {
     border-color: #FF8C00;
     border-width: 5px;
 }
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.row {
+}
+
+.left {
+    width: 30%;
+    float: left;
+}
+
+.center {
+    width: 30%;
+}
+
+.right {
+    width: 30%;
+}
+
+
+
 
 

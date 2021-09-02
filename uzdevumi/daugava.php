@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+
+include('db.php');
+$select="select id, nosaukums, apraksts from latvijasupes1 WHERE id=2";
+$result=$conn->query($select);
+
+//while($rinda=$result->fetch_assoc()){
+//echo"id: ".$rinda["id"]." upe ".$rinda["nosaukums"]." apr ".$rinda["apraksts"];}
+
+$rinda=$result->fetch_assoc()
+?>
+
+
 <head>
     <meta charset="UTF-8">
     <link
@@ -11,12 +25,13 @@
             content="width=device-width, initial-scale=1.0 user-scalable=no, viewport-fit=cover" />
 
     <title>
-        Daugava
+<div class="upesname"><h1><?php $rinda["nosaukums"]?></h1></div>
     </title>
 </head>
 <body class="daugava">
 
 <div>
+
     <div class="row">
         <div class="left">
         </div>
