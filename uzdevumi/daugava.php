@@ -4,14 +4,19 @@
 <?php
 
 include('db.php');
-$select="select id, nosaukums, apraksts from latvijasupes1 WHERE id=2";
+$upes_id=$_GET['id'];
+$select="SELECT id, nosaukums, apraksts FROM latvijasupes1 WHERE id=".$upes_id;
+$select_img="SELECT id, nosaukums, photo FROM upes_img WHERE upes_id=".$upes_id;
 $result=$conn->query($select);
+$result_img=$conn->query($select_img);
+$rinda=$result->fetch_assoc();
 
-//while($rinda=$result->fetch_assoc()){
-//echo"id: ".$rinda["id"]." upe ".$rinda["nosaukums"]." apr ".$rinda["apraksts"];}
+// while($rinda=$result->fetch_assoc()){
+//     echo"id: ".$rinda["id"]." upe ".$rinda["nosaukums"]." apr ".$rinda["apraksts"];
+// }
 
-$rinda=$result->fetch_assoc()
 ?>
+
 
 
 <head>
@@ -24,9 +29,7 @@ $rinda=$result->fetch_assoc()
             name="viewport"
             content="width=device-width, initial-scale=1.0 user-scalable=no, viewport-fit=cover" />
 
-    <title>
-<div class="upesname"><h1><?php $rinda["nosaukums"]?></h1></div>
-    </title>
+    <title>Daugava</title>
 </head>
 <body class="daugava">
 
@@ -37,7 +40,7 @@ $rinda=$result->fetch_assoc()
         </div>
         <div class="center">
             <div class="upes-menu">
-                <div class="upes-name"><h1>DAUGAVA</h1>
+               <div class="upes-name"><h1><?php echo $rinda["nosaukums"]?></h1></div>
                 </div>
                 <div class="upes-back"><a class="iconhome" title="HOME" href="Upes.html"><img src="../images/home.png" alt="Home"></a>
                 </div>
@@ -53,11 +56,9 @@ $rinda=$result->fetch_assoc()
         </div>
         <div class="center">
             <p class="daugavafont">
-                Daugava latviešiem ir viens nacionālajiem simboliem, kuru apdzied dziesmās,
-                dēvējot par „Daugavu māmuļu”, par tautas „likteņupi”. Ar cīņu 20. gadsimta
-                beigās pret Daugavas HES būvniecību, kuru izveidojot tiktu applūdināta Daugavas
-                loku dabas parks starp Daugavpili un Krāslavu, sākās tautas atmoda, kas atnesa
-                Latvijai neatkarību.
+               <?php
+               echo $rinda["apraksts"]
+               ?>
             </p>
         </div>
         <div class="right">
@@ -69,16 +70,12 @@ $rinda=$result->fetch_assoc()
         <div class="left">
         </div>
         <div class="center">
-            <div class="daugavaimg">
-                <img src="../images/Daugava5.jpg" alt="Фото1" title="Daugava">
-            </div>
-            <div class="daugavaimg">
-                <img src="../images/Daugava3.jpg" alt="Фото2" title="Daugava">
-            </div>
-            <div class="daugavaimg">
-                <img src="../images/Daugava2.jpg" alt="Фото3" title="Daugava">
-            </div>
-        </div>
+    <?php
+        while($rinda_img=$result_img->fetch_assoc()){
+        echo '<div class="daugavaimg"><img src="../images/' .$rinda_img["photo"]. '" alt="Фото1" title="Daugava" /></div>';
+
+        }
+        ?>
         <div class="right">
         </div>
     </div>

@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-include('DB.php');
-
-$select=SELECT `id`, `name`, `apraksts` FROM `latvijasupes1`;
-$result=$conn->query($select);
-while()
-
-?>
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="uzdevumi.css" type="text/css">
@@ -46,9 +37,9 @@ while()
         <div class="left"></div>
         <div class="center">
         <div class="menurow">
-            <div class="mb"><a href="daugava.php">DAUGAVA</a></div>
-            <div class="mb"><a href="gauja.html">GAUJA</a></div>
-            <div class="mb"><a href="lielupe.html">LIELUPE</a></div>
+            <div class="mb"><a href="daugava.php?id=1">DAUGAVA</a></div>
+            <div class="mb"><a href="daugava.php?id=2">GAUJA</a></div>
+            <div class="mb"><a href="daugava.php?id=3">LIELUPE</a></div>
 
         </div>
         </div>
