@@ -2,7 +2,7 @@
 
 <?php
 
-include('DB.php');
+include('datubaze.php');
 $select="select id, nosaukums, apraksts from latvijasupes1 WHERE id=2";
 $result=$conn->query($select);
 

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="styles/style.css" type="text/css">
 
 <?php
-include('db.php');
+include('datubaze.php');
 $iconSelect = "SELECT * FROM head_right";
 $iconResult = $connMyhomepage->query($iconSelect);
 ?>
