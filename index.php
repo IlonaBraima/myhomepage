@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link rel="stylesheet" href="styles/style.css" type="text/css">
+
 <?php
 include('db.php');
 $iconSelect = "SELECT * FROM head_right";
@@ -15,7 +17,6 @@ $iconResult = $connMyhomepage->query($iconSelect);
 <body>
 
 <p>PHP fails</p>
-<?php
 
 <div class=head-r>
     <div class="flex just-center">
@@ -23,7 +24,7 @@ $iconResult = $connMyhomepage->query($iconSelect);
     <?php
     while ($icon = $iconResult->fetch_assoc()) {
 
-       echo  '<a class="icon" title="' . $icon['title'] . '"href="' . $icon['adres'] . '"><img src="../images/' . $icon['icon'] . '"></a>';
+       echo  '<a class="icon" title="' . $icon['title'] . '"href="' . $icon['adres'] . '"><img src="images/' . $icon['icon'] . '"></a>';
        }
     ?>
 
@@ -38,7 +39,6 @@ $iconResult = $connMyhomepage->query($iconSelect);
 
 
 
-?>
 
 
 </body>

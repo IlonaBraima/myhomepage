@@ -16,16 +16,57 @@ body {
 .container {
   display: flex;
   max-width: 1200px;
-  position: absolute;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 
-.col {
-  width: 33,3333%;
+  .col {
+    width: 33.3333%;
+    padding: 0 10px;
 
-  .item {
+    .item {
+      box-shadow: 0 0 8px 0 rgba(0,0,0,.1);
+      margin-bottom: 20px;
+      background-color: white;
+      transition: box-shadow .3s ease;
 
-   }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      &_desc {
+        padding: 20px;
+      }
+      &_heading {
+        font-size: 22px;
+        font-weight: 700;
+        color: #f44336;
+        margin-bottom: 15px;
+      }
+
+      &_text {
+        font-size: 15px;
+        color: #131313;
+        margin-bottom: 15px;
+
+      }
+
+      &_tags {
+        display: flex;
+        flex-wrap: wrap;
+
+      }
+      &_tag {
+        font-size: 18px;
+        font-weight: 500;
+        color: darkorange;
+        margin: 0 10px 10px 0;
+
+      }
+
+      &:hover {
+        box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+      }
+    }
 
   }
 
